@@ -2,7 +2,7 @@ import flet as ft
 from router import Router
 
 def main(page: ft.Page):
-    Router(page)
+    router = Router(page)
 
 
 if __name__ == '__main__':

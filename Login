@@ -1,7 +1,5 @@
 import flet as ft
-
 from utils.style import *
-
 
 class LoginPage:
     def __init__(self):
@@ -25,9 +23,8 @@ class LoginPage:
                 filled=True,
                 color=secondaryFontColor,
             ),
-            border_radius=15,  # Removed trailing comma here
+            border_radius=15,
         )
-
 
     def view(self, page: ft.Page):
         # Page setup
@@ -40,18 +37,12 @@ class LoginPage:
         # Define fonts
         page.fonts = {
             "muller-extrabold": "fonts/muller-extrabold.ttf",
-            "prisma-pro-shadow": "fonts/prisma-pro-shadow.ttf",
+            "prisma-pro-shadow": "fonts/prisma-pro-shadow.ttf"
         }
-        signup_link = ft.Container(
-            content=ft.Text("Create Account", color=defaultFontColor),
-            on_click=lambda e: page.go('/signup'),  # Removed trailing comma here
-        )
-        ft.ElevatedButton("Войти", on_click=lambda _: page.go("/signup"))
-        ft.ElevatedButton("Регистрация", on_click=lambda _: page.go("/signup"))
 
         # Layout
         return ft.View(
-            '/',
+            "/",
             controls=[
                 ft.Row(
                     expand=True,
@@ -78,7 +69,10 @@ class LoginPage:
                                         height=40,
                                         bgcolor=hoverBqColor,
                                     ),
-                                    signup_link,  # Sign-up link to the sign-up page
+                                    ft.Container(
+                                        content=ft.Text("Create Account", color=defaultFontColor),
+                                        on_click=lambda e: page.go("/signup"),
+                                    ),
                                 ],
                             ),
                         ),

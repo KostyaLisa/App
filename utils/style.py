@@ -11,3 +11,5 @@ hoverBqColor = "#0068f7"
 defaultWidthWindows = '1000'
 defaultHeightWindows = '600'
 
+inputBqErrorColor = '#291919'
+
